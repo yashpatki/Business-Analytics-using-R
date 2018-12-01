@@ -1,0 +1,11 @@
+install.packages("arules",dependencies = TRUE)
+library(arules)
+install.packages("arulesViz", dependencies = T)
+library(arulesViz)
+data(AdultUCI)
+summary(AdultUCI)
+itemFrequencyPlot(AdultUCI, topN=20, support=0.1, type='absolute')
+rules=apriori(AdultUCI, parameter =list(supp=0.002, conf=0.8))
+rules=apriori(AdultUCI, parameter =list(supp=0.001, conf=0.08, minlen= 2),
+              appearance = list(lhs="yogurt", default="rhs"))
+plot(rules, method = "graph",interactive = F, shading = NA)
