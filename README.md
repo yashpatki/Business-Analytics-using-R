@@ -1,2 +1,2 @@
 # Business-Analytics-using-R
-Business Analytics in R
+Implementation of Fundamental Analytics Algorithms in R
